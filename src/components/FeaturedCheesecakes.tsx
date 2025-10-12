@@ -1,27 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import classicImage from "@/assets/classic-cheesecake.jpg";
-import chocolateImage from "@/assets/chocolate-cheesecake.jpg";
-import strawberryImage from "@/assets/strawberry-cheesecake.jpg";
-
-const cheesecakes = [
-  {
-    name: "Classic Original",
-    description: "Our signature New York-style cheesecake with a buttery graham cracker crust",
-    image: classicImage,
-  },
-  {
-    name: "Chocolate Decadence",
-    description: "Rich chocolate cheesecake topped with silky ganache and chocolate shavings",
-    image: chocolateImage,
-  },
-  {
-    name: "Strawberry Bliss",
-    description: "Creamy cheesecake crowned with fresh glazed strawberries",
-    image: strawberryImage,
-  },
-];
+import { Button } from "@/components/ui/button";
+import { cheesecakes } from "@/data/cheesecakes";
 
 const FeaturedCheesecakes = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
@@ -39,9 +22,10 @@ const FeaturedCheesecakes = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cheesecakes.map((cake, index) => (
             <Card 
-              key={cake.name} 
-              className="overflow-hidden border-border hover:shadow-elegant transition-all duration-300 animate-scale-in group"
+              key={cake.id} 
+              className="overflow-hidden border-border hover:shadow-elegant transition-all duration-300 animate-scale-in group cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => navigate(`/cheesecake/${cake.id}`)}
             >
               <div className="relative overflow-hidden aspect-square">
                 <img 
@@ -51,15 +35,35 @@ const FeaturedCheesecakes = () => {
                 />
               </div>
               <CardContent className="p-6 text-center space-y-3">
-                <h3 className="font-playfair text-2xl font-semibold text-foreground">
+                <h3 className="font-playfair text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                   {cake.name}
                 </h3>
                 <p className="text-muted-foreground font-inter">
                   {cake.description}
                 </p>
+                <Button
+                  className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-300 mt-4"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/cheesecake/${cake.id}`);
+                  }}
+                >
+                  View Details
+                </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button
+            onClick={() => navigate("/gallery")}
+            variant="outline"
+            size="lg"
+            className="font-inter"
+          >
+            View Full Gallery
+          </Button>
         </div>
       </div>
     </section>
