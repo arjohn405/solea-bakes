@@ -1,6 +1,7 @@
 import classicImage from "@/assets/classic-cheesecake.jpg";
 import chocolateImage from "@/assets/chocolate-cheesecake.jpg";
 import strawberryImage from "@/assets/strawberry-cheesecake.jpg";
+import heroImage from "@/assets/hero-cheesecake.jpg";
 
 export interface Cheesecake {
   id: string;
@@ -82,6 +83,29 @@ export const cheesecakes: Cheesecake[] = [
       "Homemade strawberry glaze",
       "Beautiful presentation",
       "Perfect for spring & summer"
+    ]
+  },
+  {
+    id: "vanilla-dream",
+    name: "Vanilla Dream",
+    description: "Elegant vanilla bean cheesecake with a delicate crumb topping",
+    fullDescription: "Our Vanilla Dream is a sophisticated take on the classic cheesecake. Made with real Madagascar vanilla beans and a hint of bourbon, this elegant dessert features a delicate crumb topping that adds the perfect textural contrast. It's simplicity at its finest.",
+    image: heroImage,
+    price: "$46",
+    ingredients: [
+      "Madagascar vanilla beans",
+      "Premium cream cheese",
+      "Bourbon vanilla extract",
+      "Graham cracker crust",
+      "Crumb topping",
+      "Organic sugar"
+    ],
+    servings: "8-10 slices",
+    features: [
+      "Real vanilla bean flavor",
+      "Delicate crumb topping",
+      "Elegant presentation",
+      "Perfect for any occasion"
     ]
   }
 ];

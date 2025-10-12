@@ -20,7 +20,7 @@ const FeaturedCheesecakes = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cheesecakes.map((cake, index) => (
+          {cheesecakes.slice(0, 3).map((cake, index) => (
             <Card 
               key={cake.id} 
               className="overflow-hidden border-border hover:shadow-elegant transition-all duration-300 animate-scale-in group cursor-pointer"
