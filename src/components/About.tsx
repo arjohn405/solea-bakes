@@ -129,7 +129,7 @@ const About = () => {
                       <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">
                         {storySections[activeTab].title}
                       </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed font-inter">
+          <p className="text-lg text-muted-foreground leading-relaxed font-inter">
                         {storySections[activeTab].content}
                       </p>
                     </div>

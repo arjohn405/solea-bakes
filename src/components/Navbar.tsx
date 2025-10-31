@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   const handleOrderClick = () => {
-    window.open('YOUR_GOOGLE_FORM_URL', '_blank');
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfCd_-H5o5S5sGm82WStA_Ji7FH7fXbbtm6aaHaJwYjsCX4SA/viewform?pli=1', '_blank');
     setIsMobileMenuOpen(false);
   };
 
